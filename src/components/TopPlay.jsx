@@ -56,7 +56,8 @@ const TopPlay = () => {
   // const { data } = useGetDeezerQuery();
   const divRef = useRef(null);
   const { data, isFetching, error } = useGetDeezerQuery();
-  const data1 = data.tracks;
+
+  const data1 = data?.tracks;
   const topSongs = data1?.slice(0, 5);
   useEffect(() => {
     divRef.current.scrollIntoView();
@@ -70,9 +71,7 @@ const TopPlay = () => {
     dispatch(playPause(true));
   };
 
-  if (isFetching) {
-    return <Loader title={"Loading Top Songs..."} />;
-  }
+  isFetching && <Loader title={"Loading Top Songs..."} />;
 
   return (
     <div
