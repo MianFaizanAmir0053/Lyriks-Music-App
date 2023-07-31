@@ -2,13 +2,10 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 
 export const deezerApi = createApi({
     reducerPath: 'deezerApi',
-    baseQuery: fetchBaseQuery({
-        // baseUrl: 'https://shazam-core7.p.rapidapi.com/charts/',
-        // baseUrl: 'https://shazam.p.rapidapi.com',
-        // baseUrl: "https://shazam-api7.p.rapidapi.com",
+ baseQuery: fetchBaseQuery({
         baseUrl: "https://shazam.p.rapidapi.com",
         prepareHeaders: (headers) => {
-            headers.set('X-RapidAPI-Key', '83632f7a36msh8b95c00191207eep102008jsn46979a2d24fe');
+            headers.set('X-RapidAPI-Key', '2923d9b7f2mshcffbb5f1c5c58e5p1e709ejsn00d1f491136b');
             headers.set('X-RapidAPI-Host', 'shazam.p.rapidapi.com');
             return headers;
         }
